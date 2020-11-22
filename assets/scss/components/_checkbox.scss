@@ -1,0 +1,94 @@
+.checkbox {
+    display: block;
+    position: relative;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.54;
+    cursor: pointer;
+    transition: color .3s ease;
+
+    &+& {
+        margin-top: 12px;
+    }
+
+    &__text {
+        display: block;
+        padding-left: 36px;
+    }
+
+    &__count {
+        color: $gray2;
+        transition: color .3s ease;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -12px;
+        width: 24px;
+        height: 24px;
+        background-color: $white;
+        border: 1px solid $gray2;
+        border-radius: 4px;
+        transition: border-color .3s ease, box-shadow .3s ease, background-color .3s ease;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 14px;
+            height: 8px;
+            border: 2px solid $white;
+            border-top: none;
+            border-right: none;
+            transform: rotate(-45deg);
+            margin: -5px 0 0 -6px;
+            will-change: opacity;
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+    }
+
+    &:hover,
+    &:hover &__count {
+        color: $violet2;
+    }
+
+    &:hover &__icon {
+        border-color: $violet4;
+        box-shadow: 0px 6px 10px rgba(215, 102, 255, .25);
+    }
+
+    /* checked */
+    &__control:checked~&__icon {
+        border-color: $violet1;
+        background-color: $violet1;
+    }
+
+    &__control:checked~&__icon::before {
+        opacity: 1;
+    }
+
+    /* disabled */
+    &--disabled {
+        cursor: not-allowed;
+    }
+
+    &__control:disabled~&__icon {
+        border-color: $gray3;
+        background-color: $gray4;
+        box-shadow: none;
+    }
+
+    &__control:disabled~&__icon::before {
+        opacity: 0;
+    }
+
+    &__control:disabled~&__text,
+    &__control:disabled~&__text &__count {
+        color: $gray2;
+        pointer-events: none;
+    }
+}

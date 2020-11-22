@@ -1,0 +1,75 @@
+.swiper {
+  &-buttons {
+    display: flex;
+    align-items: center;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      outline: none;
+      position: relative;
+      left: 0;
+      top: 0;
+      margin-top: 0;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba($violet4, .5);
+      background-color: rgba($violet4, .5);
+      border-radius: 4px;
+      color: $violet2;
+      border-radius: 50%;
+      transition: color .3s ease;
+
+      &:hover {
+        color: $white;
+        border-color: $violet2;
+        background-color: $violet2;
+      }
+
+      &:focus,
+      &:active {
+        color: $violet2;
+        border-color: rgba($violet4, .5);
+        background-color: rgba($violet4, .5);
+      }
+    }
+
+    .swiper-button-next {
+      margin-left: 8px;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      display: none;
+    }
+
+    .swiper-button-i {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &-pagination {
+    z-index: 99;
+  }
+
+  &-pagination-bullet {
+    opacity: 1;
+    width: 6px;
+    height: 6px;
+    box-shadow: 0 0 0 2px $gray5;
+    background-color: $gray5;
+
+    &:hover {
+      box-shadow: 0 0 0 2px $gray1;
+      background-color: $violet1;
+      opacity: 1;
+    }
+  }
+
+  &-pagination-bullet-active {
+    opacity: 1;
+    box-shadow: 0 0 0 2px $violet6;
+    background-color: $violet6;
+  }
+
+}

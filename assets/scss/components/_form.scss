@@ -1,0 +1,42 @@
+.form {
+  font-family: $fontDefault;
+  font-size: $fontSizeDefault;
+
+  &__item {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  &__control {
+    width: 100%;
+    display: block;
+    height: 44px;
+    padding: 10px 15px;
+    background-color: $gray4;
+    border: 1px solid $gray4;
+    outline: none;
+    border-radius: 2px;
+    transition: border-color .3s ease, box-shadow .3s ease;
+
+    &:focus {
+      border-color: $violet1;
+      box-shadow: 0 0 0 2px rgba($violet1, .25);
+    }
+  }
+
+  &__control--textarea {
+    min-height: 89px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  &__submit {
+    margin: 10px 0 0;
+    padding: .8em 2.5em;
+    font-size: 14px;
+    line-height: 24px;
+    cursor: pointer;
+    outline: none;
+  }
+
+}

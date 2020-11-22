@@ -1,0 +1,63 @@
+.modal {
+  display: none;
+  max-width: 936px;
+  width: 100%;
+  padding: 50px 64px 50px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.17;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  .fancybox-close-small {
+    background-color: $white;
+    border-radius: 50%;
+    padding: 2px;
+    width: 24px;
+    height: 24px;
+    right: 5px;
+    top: 5px;
+    transition: background-color .3s ease, color .3s ease;
+  }
+
+  .fancybox-close-small:hover,
+  .fancybox-close-small:focus,
+  .fancybox-close-small:active {
+    background-color: #F3F4F8;
+    color: $violet2;
+  }
+
+  @media(max-width:991px) {
+    & {
+      padding: 30px 20px 20px;
+    }
+  }
+
+  @media(max-width:576px) {
+    & {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}
+
+
+
+/* fancybox custom */
+
+.compensate-for-scrollbar {
+  margin-right: 0 !important;
+}
+
+.fancybox {
+  &-image {
+    border-radius: 2px;
+  }
+
+  &-is-open .fancybox-bg {
+    opacity: .4;
+  }
+}

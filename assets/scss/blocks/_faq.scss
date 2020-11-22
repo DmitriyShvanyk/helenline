@@ -1,0 +1,124 @@
+.faq {
+  padding: 20px 0;
+
+  &__row {
+    padding: 20px 40px;
+  }
+
+  &__columns,
+  &__column {
+    display: flex;
+  }
+
+  &__columns {
+    flex-wrap: wrap;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  &__column {
+    max-width: 20%;
+    width: 20%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__item {
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    color: $colorTitle;
+    font-weight: 500;
+    transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
+    margin-bottom: 40px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
+
+    &:hover &-img,
+    &:focus &-img,
+    &:active  &-img{
+      transform: scale(1.2);
+    }
+  }
+
+  &__item-pict {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 73.87%;
+    height: 0;
+  }
+
+  &__item-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    transition: transform .7s ease;
+  }
+
+  &__item-name {
+    display: block;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 1700px) {
+    &__column {
+      max-width: 33.333%;
+      width: 33.333%;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    &__column {
+      max-width: 50%;
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    & {
+      padding: 0;
+    }
+
+    &__row {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    &__row {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &__columns {
+      display: block;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &__column {
+      max-width: 100%;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__item {
+      margin-bottom: 40px;
+    }
+
+  }
+
+}

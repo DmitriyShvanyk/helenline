@@ -1,0 +1,117 @@
+.subscribe {
+  min-height: 153px;
+  background-color: $blue;
+  background-image: url(#{$pathAssets}img/subscribe/subscribe.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
+
+  &__container,
+  &__columns,
+  &__content,
+  &__discount {
+    display: flex;
+    align-items: center;
+  }
+
+  &__container {
+    max-width: 1440px;
+    padding: 25px 20px;
+  }
+
+  &__columns {
+    width: 100%;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  &__column {
+    width: 50%;
+    max-width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__discount {
+    width: 88px;
+    height: 88px;
+    min-width: 88px;
+    min-height: 88px;
+    background-color: $blue;
+    border-radius: 50%;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-right: 20px;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 22px;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.375;
+    margin: 0;
+  }
+
+  &__form-subscribe {
+    .form-subscribe__control {
+      border-radius: 25px 0 0 25px;
+    }
+
+    .form-subscribe__submit {
+      font-size: 15px;
+      font-weight: 500;
+      height: 44px;
+      cursor: pointer;
+      text-transform: none;
+      border-radius: 0 25px 25px 0;
+    }
+  }
+
+  @media (max-width:767px) {
+    & {
+      background: linear-gradient(to right, rgba(28, 91, 136, 1) 0%, rgba(65, 151, 212, 1) 100%);
+    }
+
+    &__container {
+      padding: 0;
+    }
+
+    &__columns {
+      display: block;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &__column {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__content {
+      display: block;
+      padding: 40px 25px 15px 25px;
+    }
+
+    &__form-subscribe {
+      padding: 15px 25px 40px;
+      max-width: 450px;
+    }
+
+    &__discount {
+      margin: 0 auto 15px auto;
+    }
+
+    &__text {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.heading {
+    &__container {
+        padding-bottom: 28px;
+    }
+
+    &__title {
+        margin-top: 2px;
+    }
+
+    @media (max-width:767px) {
+        &__container {
+            padding-top: 28px;
+            padding-bottom: 18px;
+        }
+
+        &__title {
+            text-align: center;
+            margin-top: 0;
+        }
+    }
+}

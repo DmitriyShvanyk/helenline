@@ -1,0 +1,26 @@
+.scrollbar {
+    position: relative;
+
+    &.ps--active-y>.ps__rail-y {
+        background: $violet3 !important;
+        border-radius: 4px;
+        width: 8px !important;
+    }
+
+    .ps__rail-y,
+    &.ps:hover>.ps__rail-y {
+        opacity: 1;
+        width: 8px !important;
+    }
+
+    .ps__thumb-y {
+        &,
+        &:hover {
+            background: $violet1 !important;
+            border-radius: 4px;
+            width: 8px !important;
+            right: 0;
+            opacity: 1;
+        }
+    }
+}

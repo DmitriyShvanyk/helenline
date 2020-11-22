@@ -1,0 +1,22 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  padding: 0;
+  width: calc(100% - 340px);
+  min-width: calc(100% - 340px);
+}
+
+@media (min-width:1501px) {
+  .content {
+    width: calc(100% - 384px);
+    min-width: calc(100% - 384px);
+  }
+}
+
+@media (max-width:1200px) {
+  .content {
+    width: 100%;
+    min-width: 100%;
+  }
+}

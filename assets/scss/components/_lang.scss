@@ -1,0 +1,26 @@
+.lang {
+    display: flex;
+
+    &__item {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.43;
+        color: $gray2;
+        text-decoration: none;
+
+        &+& {
+            margin-left: 16px;
+        }
+    }
+
+    &__item--active {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            color: $dark;
+            text-decoration: none;
+            cursor: text;
+        }
+    }
+}

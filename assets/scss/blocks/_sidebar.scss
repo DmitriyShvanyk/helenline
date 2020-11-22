@@ -1,0 +1,578 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: $dark;
+  width: 340px;
+  min-width: 340px;
+  color: $white;
+
+  &__item {
+    padding: 20px;
+    border-bottom: 1px solid rgba(252, 252, 252, .102);
+  }
+
+  &__toggler {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.35;
+    padding-left: 40px;
+    position: relative;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: left;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #454D55;
+      border-left: none;
+      border-bottom: none;
+      margin-top: -10px;
+      transform: rotate(135deg);
+      transition: border-color .3s ease, transform .3s ease;
+    }
+  }
+
+  &__item {
+    max-height: 5000px;
+    transition: max-height 1s ease-in-out, padding-bottom .1s ease-in-out;
+  }
+
+  &__item--active {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    padding-bottom: 43px;
+
+    .sidebar__toggler::before {
+      margin-top: -7px;
+      transform: rotate(45deg);
+    }
+
+    .sidebar__item-body {
+      opacity: 0;
+    }
+
+  }
+
+  &__item-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 13px;
+  }
+
+  &__item-body {
+    opacity: 1;
+    transition: opacity .2s ease;
+  }
+
+  &__view {
+    display: flex;
+    white-space: nowrap;
+  }
+
+  &__view-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: rgba($white, .2);
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color .3s ease;
+    outline: none;
+
+    // пока скрываем
+    &:nth-of-type(2) {
+      display: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      color: rgba($white, .5);
+    }
+  }
+
+  &__view-btn+.sidebar__view-btn {
+    margin-left: 15px;
+  }
+
+  &__view-btn--active {
+    color: $white;
+    cursor: text;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+    }
+  }  
+
+  @media (min-width:1501px) {
+    & {
+      width: 384px;
+      min-width: 384px;
+    }
+  }
+
+  @media (min-width:1201px) {
+    &--checkout{
+      display: none;
+    }
+  }
+
+  @media (max-width:1200px) {
+    & {
+      width: 320px;
+      min-width: 320px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      transform: translateX(-320px);
+      transition: transform .3s ease;
+    }
+
+    &--open {
+      transform: translateX(0);
+      z-index: 999;
+    }
+
+    &--card .menu-category__toggler {
+      display: none;
+    }
+
+  }
+
+}
+
+
+
+
+.sidebar--card {
+  align-items: center;
+  justify-content: center;
+
+  .sidebar__item {
+    border-bottom: none;
+  }
+
+  .menu-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .category-card__toggler {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    padding-left: 45px;
+    font-size: 22px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: $white;
+    font-weight: 700;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover .category-card__toggler-i,
+    &:focus .category-card__toggler-i,
+    &:active .category-card__toggler-i {
+      color: $white;
+    }
+  }
+
+  .category-card__toggler-i {
+    color: rgba($blue, .2);
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 0;
+    transform: translateY(-50%);
+    transition: color .3s ease;
+  }
+
+  .category-card__toggler::before,
+  .category-card__toggler::after {
+    display: none;
+  }
+
+}
+
+
+
+
+
+
+
+/* menu-category */
+
+.menu-category {
+  &__toggler {
+    @extend .sidebar__toggler;
+  }
+
+  &__toggler--active::before {
+    margin-top: -7px;
+    transform: rotate(45deg);
+  }
+
+  &__toggler:hover::before,
+  &__toggler--active::before {
+    border-color: $white;
+  }
+
+  &__list {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  }
+
+  &__item {
+    margin-bottom: 17px;
+  }
+
+  &__link {
+    color: $gray;
+    display: block;
+    padding-left: 40px;
+    position: relative;
+    text-decoration: none;
+    transition: color .3s ease;
+  }
+
+  &__link::before {
+    content: '';
+    width: 25px;
+    background-image: url(../img/menu-category-icons.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &__link--conditioners::before {
+    height: 17px;
+    background-position: -3px 0;
+  }
+
+  &__link--ventilation::before {
+    height: 22px;
+    background-position: -5px -104px;
+  }
+
+  &__link--dehumidifiers::before {
+    height: 21px;
+    background-position: -7px -141px;
+  }
+
+  &__link--efireplaces::before {
+    height: 23px;
+    background-position: -5px -384px;
+  }
+
+  &__link--thermal-curtains::before {
+    height: 21px;
+    background-position: -5px -351px;
+  }
+
+  &__link--mcclimate::before {
+    height: 22px;
+    background-position: -8px -70px;
+  }
+
+  &__link--promsystem::before {
+    height: 21px;
+    background-position: -6px -283px;
+  }
+
+  &__link--reenergy::before {
+    height: 25px;
+    background-position: -10px -210px;
+  }
+
+  &__link--engineering::before {
+    height: 22px;
+    background-position: -5px -247px;
+  }
+
+  &__link--pumps::before {
+    height: 22px;
+    background-position: -3px -316px;
+  }
+
+  &__link--boilers::before {
+    height: 23px;
+    background-position: -6px -32px;
+  }
+
+  &__link--other-devices::before {
+    height: 21px;
+    background-position: -3px -415px;
+  }
+
+  &__link:hover,
+  &__link:focus,
+  &__link:active {
+    color: $blue;
+    text-decoration: none;
+  }
+
+  &__link+.submenu-category--active {
+    margin-top: 15px;
+  }
+
+  &__list--active {
+    margin-top: 15px;
+    max-height: 10000px;
+    transition: max-height 1s ease-in-out;
+  }
+
+  &__head {
+    display: none;
+  }
+
+  &--catalog {
+    .menu-category__toggler::before {
+      margin-top: -7px;
+      transform: rotate(45deg);
+    }
+
+    .menu-category__toggler--active {
+      margin-bottom: 15px;
+    }
+
+    .menu-category__toggler--active::before {
+      margin-top: -10px;
+      transform: rotate(135deg);
+    }
+  }
+
+  @media (max-width:1200px) {
+    &__toggler {
+      display: none;
+    }
+
+    &__head {
+      padding: 17px 20px;
+      background-color: $blue;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &__title {
+      display: block;
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: $white;
+      text-decoration: none;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    &__title::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      margin-top: -8px;
+      border: 3px solid $white;
+      border-top: none;
+      border-right: none;
+      transform: rotate(45deg);
+    }
+
+    &__close {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border: none;
+      background-color: transparent;
+      position: relative;
+      outline: none;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    &__close::before,
+    &__close::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 24px;
+      height: 2px;
+      margin: -1px 0 0 -12px;
+      background-color: $white;
+      border-radius: 3px;
+      transform: rotate(45deg);
+      transition: background-color .3s ease;
+    }
+
+    &__close::after {
+      transform: rotate(-45deg);
+    }
+
+    &__close:hover::before,
+    &__close:focus::before,
+    &__close:active::before,
+    &__close:hover::after,
+    &__close:focus::after,
+    &__close:active::after {
+      background-color: rgba($white, .7);
+    }
+
+    &__list,
+    &__item {
+      margin: 0;
+    }
+
+    &__item {
+      border-bottom: 1px solid $dark;
+      position: relative;
+    }
+
+    &__link {
+      padding: 10px 20px 10px 50px;
+    }
+
+    &__link::before {
+      left: 10px;
+    }
+
+    &__link:hover,
+    &__link:focus,
+    &__link:active,
+    &__link--active {
+      background-color: $dark;
+      color: $white;
+    }
+
+    &__link+.submenu-category::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      right: 8px;
+      width: 8px;
+      height: 8px;
+      border: 1px solid #454D55;
+      transform: rotate(45deg);
+      border-left: none;
+      border-bottom: none;
+      transition: transform .3s ease;
+    }
+
+    &__link+.submenu-category--active::before {
+      margin-top: -2px;
+      transform: rotate(135deg);
+    }
+  }
+}
+
+
+
+
+.submenu-category {
+  padding-left: 0;
+  list-style: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+
+  &__item {
+    margin-bottom: 12px;
+  }
+
+  &__link {
+    color: $gray;
+    display: block;
+    padding-left: 60px;
+    position: relative;
+    text-decoration: none;
+    transition: color .3s ease;
+  }
+
+  &__link::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 40px;
+    width: 6px;
+    height: 6px;
+    border: 1px solid $gray;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+    transition: border-color .3s ease;
+  }
+
+  &__link:hover,
+  &__link:focus,
+  &__link:active {
+    color: $blue;
+    text-decoration: none;
+  }
+
+  &__link:hover::before,
+  &__link:focus::before,
+  &__link:active::before {
+    border-color: $blue;
+  }
+
+  &--active {
+    max-height: 10000px;
+    transition: max-height 1s ease-in-out;
+  }
+
+  @media (max-width:1200px) {
+    & {
+      margin: 0;
+    }
+
+    &__item {
+      margin-bottom: 0;
+    }
+
+    &__link {
+      padding: 10px 10px 10px 50px;
+    }
+
+    &__link::before {
+      display: none;
+    }
+  }
+}

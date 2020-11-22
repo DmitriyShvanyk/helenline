@@ -1,0 +1,22 @@
+.blockquote {
+    padding: 15px 0;
+    margin: 1.1em 0;
+    font-weight: 700;
+    line-height: 1.588;
+    border-top: 4px solid $violet2;
+    border-bottom: 4px solid $violet2;
+
+    &,
+    &__title {
+        font-size: 17px;
+    }
+
+    &__title {
+        color: $dark;
+        margin-bottom: 12px;
+    }
+
+    p {
+        margin: 0 0 1em;
+    }
+}

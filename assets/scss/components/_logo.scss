@@ -1,0 +1,38 @@
+.logo {
+  font-style: normal;
+  font-weight: normal;
+  font-family: $fontSerif;
+  white-space: nowrap;
+  font-size: 36px;
+  line-height: 45px;
+  display: inline-flex;
+  color: $dark;
+  text-decoration: none;
+  will-change: opacity;
+  transition: color .3s ease, opacity .3s ease;
+
+  &__text {
+    margin-right: 16px;
+  }
+
+  &__tagline {
+    display: block;
+    white-space: normal;
+    font-family: $fontDefault;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1.54;
+    color: rgba($dark, .85);
+    max-width: 140px;
+    margin-right: 38px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $dark;
+    text-decoration: none;
+    opacity: .8;
+  }
+
+}

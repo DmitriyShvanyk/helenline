@@ -1,0 +1,339 @@
+.navbar {
+  background-color: $white;
+  position: relative;
+
+  &__container {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 28px;
+    position: relative;
+  }
+
+  &__link {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.65;
+    color: $dark;
+  }
+
+  &__caret {
+    margin-left: 7px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 5px 0 5px;
+    border-color: $violet4 transparent transparent transparent;
+  }
+
+  &__right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__lang {
+    margin-right: 25px;
+  }
+
+  &__social {
+    position: relative;
+    top: 3px;
+  }
+
+  &__hamburger {
+    display: none;
+  }
+
+  &__submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $gray4;
+    margin: 0;
+    list-style: none;
+    z-index: 999;
+    min-width: 320px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 16px 20px 20px;
+  }
+
+  &__submenu-link {
+    padding: 5px 19px 5px 0;
+    display: block;
+    color: $gray1;
+  }
+
+  &__head {
+    min-height: 60px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $white;
+    background-color: $violet2;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__close {
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    outline: none;
+    position: relative;
+    will-change: opacity;
+    transition: opacity .3s ease;
+
+    &::before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 18px;
+      height: 2px;
+      background-color: $white;
+      border-radius: 2px;
+      margin: -1px 0 0 -9px;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: .8;
+    }
+  }
+
+  &__follow-link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    color: $violet1;
+  }
+
+  &__follow-link-icon {
+    width: 12px;
+    height: 12px;
+    margin-left: 3px;
+    position: relative;
+    top: 1px;
+  }
+
+  &__phones {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: $gray4;
+    padding: 40px 20px;
+  }
+
+  &__footer {
+    margin-top: auto;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  @media (min-width: 992px) {
+    &__item:hover &__submenu {
+      display: block;
+    }
+
+    &__head,
+    &__follow-link,
+    &__phones,
+    &__footer {
+      display: none;
+    }
+
+    &__submenu {
+      background-color: $white;
+      border-radius: 0 0 2px 2px;
+      box-shadow: 0 4px 4px rgba($black, .2);
+    }
+  }
+
+  @media (max-width: 991px) {
+    &__container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__hamburger {
+      display: flex;
+      width: 50%;
+    }
+
+    &__collapse,
+    &__right &__lang {
+      display: none;
+    }
+
+    &__right {
+      width: 50%;
+      height: 45px;
+      background-color: $violet;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    &__right &__social {
+      display: inline-flex;
+      margin-left: auto;
+    }
+
+    &__collapse {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 100vh;
+      max-height: 100vh;
+      overflow-y: auto;
+      background-color: $gray4;
+      z-index: 999;
+      transform: translateX(-100%);
+      will-change: transform;
+      transition: transform .3s ease;
+    }
+
+    &__collapse--open {
+      flex-direction: column;
+      transform: translateX(0);
+    }
+
+    &__menu {
+      flex-direction: column;
+      background-color: $white;
+    }
+
+
+
+    &__item {
+      width: 100%;
+      margin-right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      &+& {
+        border-top: 1px solid $gray4;
+      }
+    }
+
+    &__link {
+      width: 70%;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.6;
+      padding-left: 20px;
+      padding-right: 0;
+    }
+
+    &__follow-link {
+      width: 30%;
+      justify-content: flex-end;
+      padding-right: 20px;
+    }
+
+    &__link--catalog {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      padding-left: 60px;
+      position: relative;
+
+      .navbar__caret {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        width: 30px;
+        height: 30px;
+        background-color: $violet3;
+        border-radius: 50%;
+        margin-top: -15px;
+        border: none;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 12px;
+          height: 2px;
+          border-radius: 2px;
+          background-color: $violet2;
+          margin: -1px 0 0 -6px;
+        }
+
+        &::after {
+          transform: rotate(90deg);
+          will-change: transform;
+          transition: transform .3s ease;
+        }
+      }
+
+    }
+
+    &__link--catalog--active {
+      .navbar__caret {
+        &::after {
+          transform: rotate(0);
+        }
+      }
+    }
+
+    &__submenu {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    &__submenu--catalog--open {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__submenu-link {
+      padding: 5px 20px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.label {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.67;
+    color: $white;
+    display: inline-block;
+    vertical-align: top;
+    background-color: $violet2;
+    text-transform: uppercase;
+    padding: 4px 12px;
+
+    & + &{
+        margin-top: 8px;
+    }
+
+    &--action {
+        background-color: $red;
+    }
+
+    &--hit {
+        background-color: $violet2;
+    }
+
+    &--new {
+        background-color: $green;
+    }
+}

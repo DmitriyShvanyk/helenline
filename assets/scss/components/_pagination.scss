@@ -1,0 +1,134 @@
+.pagination {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+
+  &__item {
+    margin: 0 2px;
+  }
+
+  &__item--dots {
+    margin: 0 4px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+    text-align: center;
+    height: 100%;
+  }
+
+  &__item,
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    color: rgba($dark, .85);
+    height: 100%;
+  }
+
+  &__link {
+    min-height: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    padding: 0 10px;
+    text-decoration: none;
+    background-color: $gray4;
+    border-radius: 50%;
+    transition: color .3s ease, background-color .3s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: rgba($violet, .85);
+      background-color: $violet3;
+      text-decoration: none;
+    }
+  }
+
+  &__link--active {
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $violet3;
+      color: rgba($violet, .85);
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    color: $violet2;
+  }
+
+  &__link-prev {
+    margin-right: 8px;
+  }
+
+  &__link-next {
+    margin-left: 8px;
+  }
+
+  &__link-prev,
+  &__link-next {
+    padding: 0;
+  }
+
+  @media (max-width:767px) {
+    &__list {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      margin-bottom: 4px;
+    }
+
+    &__link-prev {
+      margin-right: 0;
+    }
+
+    &__link-next {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width:600px) {
+    &__list {
+      justify-content: space-between;
+      max-width: 290px;
+    }
+
+    &__item {
+
+      &:first-child,
+      &:last-child {
+        display: flex;
+        width: 50%;
+        order: -1;
+        margin: 4px 0;
+      }
+
+      &:first-child {
+        justify-content: flex-start;
+      }
+
+      &:last-child {
+        justify-content: flex-end;
+      }
+    }
+
+    &__link {
+      width: 100%;
+    }
+  }
+}

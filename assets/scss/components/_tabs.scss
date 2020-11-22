@@ -1,0 +1,129 @@
+.tabs {
+  position: relative;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    background-color: $white;
+  }
+
+  &__label {
+    background-color: $gray4;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 16px 16px 16px 56px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  &__label-icon{
+    position: absolute; top: 50%; left: 30px;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+
+    &::before,
+    &::after{
+      content: '';
+      position: absolute; top: 50%; left: 50%;
+      width: 2px;
+      height: 16px;
+      background-color: $red;
+      margin: -8px 0 0 -1px;
+      transition: opacity .3s ease;
+    }
+
+    &::after{
+      width: 16px;
+      height: 2px;
+      margin: -1px 0 0 -8px;
+    }
+  }
+
+  &__label-icon {
+    width: 18px;
+    height: 18px;
+    color: $red;
+  }
+
+  &__label-icon--left {
+    margin-right: 6px;
+  }
+
+  &__contents {
+    display: none;
+    padding: 40px 16px;
+    margin-bottom: 12px;
+  }
+
+  &__content {
+    max-width: 1016px;
+    margin: 0 auto;
+  }
+
+  &__control:checked+.tabs__label+.tabs__contents {
+    display: block;
+  }
+
+  &__control:checked+.tabs__label .tabs__label-icon::before{
+    opacity: 0;
+  }
+
+  @media (max-width:991px) {
+    &__contents {
+      padding: 0;
+    }
+
+    &__content {
+      padding: 24px;
+    }
+  }
+
+  @media (max-width:767px) {
+    &__label {
+      font-size: 17px;
+      padding: 10px 12px 11px 40px;
+      box-shadow: 0px 10px 30px rgba(48,51,66,0.1);
+      border-radius: 4px;
+      background-color: $white;
+      border: 1px solid $gray6;
+    }  
+
+    &__label-icon{
+      left: 16px;
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+  
+      &::before,
+      &::after{
+        width: 2px;
+        height: 10px;
+        margin: -5px 0 0 -1px;
+      }
+  
+      &::after{
+        width: 10px;
+        height: 2px;
+        margin: -1px 0 0 -5px;
+      }
+    }
+
+    &__content {
+      padding: 28px 16px;
+    }
+
+  }
+
+  @media (max-width:576px) {
+    &__content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+}

@@ -1,0 +1,35 @@
+.social {
+
+    &__inner {
+        display: flex;
+    }
+
+    &__link {
+        font-size: 24px;
+        color: $violet4;
+        text-decoration: none;
+        transition: color .3s ease;
+    }
+
+    &__link+&__link {
+        margin-left: 11px;
+    }
+
+    &__link:hover,
+    &__link:focus,
+    &__link:active {
+        color: $violet2;
+        text-decoration: none;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__text {
+        color: $dark;
+        font-size: 13px;
+        line-height: 1.54;
+    }
+}

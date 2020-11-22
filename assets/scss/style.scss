@@ -1,0 +1,69 @@
+@charset 'utf-8';
+
+/* ==================== PLUGINS ==================== */
+
+@import url(../vendor/swiper/swiper-bundle.min.css);
+@import url(../vendor/choices/choices.min.css);
+@import url(../vendor/ion-rangeslider/ion.rangeSlider.min.css);
+@import url(../vendor/perfect-scrollbar/perfect-scrollbar.min.css);
+@import url(../vendor/fancybox/jquery.fancybox.min.css);
+
+
+/* ==================== ABSTRACTS ==================== */
+
+@import 'abstracts/variable';
+
+
+/* ==================== BASE ==================== */
+
+@import 'base/normalize';
+@import 'base/fonts';
+@import 'base/basic';
+
+
+/* ==================== COMPONENTS ==================== */
+
+@import 'components/swiper-custom';
+@import 'components/logo';
+@import 'components/btn';
+@import 'components/social';
+@import 'components/title';
+@import 'components/messenger';
+@import 'components/select';
+@import 'components/range';
+@import 'components/checkbox';
+@import 'components/accordion';
+@import 'components/scrollbar';
+@import 'components/heading';
+@import 'components/hamburger';
+@import 'components/breadcrumb';
+@import 'components/pagination';
+@import 'components/filter';
+@import 'components/faq';
+@import 'components/form';
+@import 'components/table';
+@import 'components/blockquote';
+@import 'components/modal';
+@import 'components/label';
+@import 'components/cart';
+@import 'components/lang';
+@import 'components/category';
+
+
+
+
+/* ==================== BLOCKS ==================== */
+
+@import 'blocks/header';
+@import 'blocks/navbar';
+@import 'blocks/products';
+@import 'blocks/news';
+@import 'blocks/news-main';
+@import 'blocks/article';
+@import 'blocks/major';
+@import 'blocks/catalog';
+@import 'blocks/different';
+@import 'blocks/card';
+@import 'blocks/contacts';
+@import 'blocks/feedback';
+@import 'blocks/footer';

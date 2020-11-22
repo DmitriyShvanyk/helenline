@@ -1,0 +1,31 @@
+.messenger {
+    display: flex;
+    align-items: center;
+    color: rgba($dark, .85);
+    text-decoration: none;
+    transition: color .3s ease;
+
+    &__icon {
+        color: $violet4;
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+        transition: color .3s ease;
+    }
+
+    &__icon--tg,
+    &__icon--viber {
+        width: 24px;
+        height: 24px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:hover &__icon,
+    &:focus &__icon,
+    &:active &__icon {
+        color: $violet1;
+        text-decoration: none;
+    }
+}

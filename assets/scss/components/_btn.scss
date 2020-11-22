@@ -1,0 +1,89 @@
+/* btn */
+
+.btn {
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  min-height: 48px;
+  font-size: 14px;
+  line-height: 1;
+  padding: 12px 36px;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: $white;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: $violet2;
+  border: none;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background-color .3s ease, box-shadow .3s ease;
+
+  &__text+&__icon,
+  &__icon+&__text {
+    margin-left: 4px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    will-change: transform;
+    transition: transform .5s ease;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background-color: $violet1;
+    text-decoration: none;
+  }
+
+  &:hover &__icon,
+  &:focus &__icon,
+  &:active &__icon {
+    transform: translateX(5px);
+  }
+
+  @media (max-width:576px) {
+    & {
+      font-size: 13px;
+      padding: 10px 30px;
+    }
+  }
+}
+
+
+.btn--outline {
+  color: $violet2;
+  background-color: $white;
+  border: 1px solid $violet2;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    border-color: $violet1;
+    background-color: $violet1;
+  }
+}
+
+
+.btn--link {
+  font-size: 15px;
+  font-weight: normal;
+  color: $violet2;
+  background-color: transparent;
+  border: none;
+  text-transform: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $violet1;
+    background-color: transparent;
+    border: none;
+  }
+}
